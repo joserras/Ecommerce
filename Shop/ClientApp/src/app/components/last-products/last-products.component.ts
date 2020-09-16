@@ -1,0 +1,52 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-last-products',
+  templateUrl: './last-products.component.html',
+  styleUrls: ['./last-products.component.css']
+})
+export class LastProductsComponent implements OnInit {
+
+  constructor() { }
+    ngOnInit(): void {
+        
+    }
+  slides = [
+    { img: "http://placehold.it/350x150/000000" },
+    { img: "http://placehold.it/350x150/111111" },
+    { img: "http://placehold.it/350x150/333333" },
+    { img: "http://placehold.it/350x150/666666" },
+    { img: "http://placehold.it/350x150/000000" },
+    { img: "http://placehold.it/350x150/111111" },
+    { img: "http://placehold.it/350x150/333333" },
+    { img: "http://placehold.it/350x150/666666" }
+  ];
+  slideConfig = { "slidesToShow": 4, "slidesToScroll": 8 };
+
+
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
+
+  slickInit(e) {
+    console.log('slick initialized');
+  }
+
+  breakpoint(e) {
+    console.log('breakpoint');
+  }
+
+  afterChange(e) {
+    console.log('afterChange');
+  }
+
+  beforeChange(e) {
+    console.log('beforeChange');
+  }
+
+
+
+
+  
+
+}

@@ -1,0 +1,59 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <div class="dropdown " >
+        <button style="margin-right:30px" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+          <i class="fas fa-bars"></i>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">HTML</a></li>
+          <li><a tabindex="-1" href="#">CSS</a></li>
+          <li class="dropdown-submenu">
+            <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+              <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+              <li class="dropdown-submenu">
+                <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">3rd level dropdown</a></li>
+                  <li><a href="#">3rd level dropdown</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <a [routerLink]="['/']">
+          <img class="navbar-brand" class="img-fluid" width="138px" height="48px" src="https://cdn.pccomponentes.com/img/logos/logo-pccomponentes.svg">
+        </a>
+      </div>
+    </div>
+    <div class="container">
+
+  
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+           [ngClass]="{ show: isExpanded }">
+        <app-login-menu></app-login-menu>
+        <ul class="navbar-nav flex-grow">
+
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
