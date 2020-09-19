@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Data;
 
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200917172255_categories2")]
+    partial class categories2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -241,9 +243,6 @@ namespace Shop.Data.Migrations
                     b.Property<int>("Identifier")
                         .HasColumnType("int");
 
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -259,7 +258,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "1",
                             Identifier = 1,
-                            Level = 0,
                             Name = "Ordenadores",
                             Parent_Identifier = 0
                         },
@@ -267,7 +265,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "2",
                             Identifier = 2,
-                            Level = 1,
                             Name = "Sobremesa",
                             Parent_Identifier = 1
                         },
@@ -275,7 +272,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "3",
                             Identifier = 3,
-                            Level = 2,
                             Name = "Gaming",
                             Parent_Identifier = 2
                         },
@@ -283,7 +279,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "4",
                             Identifier = 4,
-                            Level = 2,
                             Name = "Oficina",
                             Parent_Identifier = 2
                         },
@@ -291,7 +286,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "5",
                             Identifier = 5,
-                            Level = 1,
                             Name = "Portatiles",
                             Parent_Identifier = 1
                         },
@@ -299,7 +293,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "6",
                             Identifier = 6,
-                            Level = 2,
                             Name = "Gaming",
                             Parent_Identifier = 5
                         },
@@ -307,7 +300,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "7",
                             Identifier = 7,
-                            Level = 2,
                             Name = "Oficina",
                             Parent_Identifier = 5
                         },
@@ -315,7 +307,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "8",
                             Identifier = 8,
-                            Level = 2,
                             Name = "UltraBook",
                             Parent_Identifier = 5
                         },
@@ -323,7 +314,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "9",
                             Identifier = 9,
-                            Level = 1,
                             Name = "Periféricos",
                             Parent_Identifier = 0
                         },
@@ -331,7 +321,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "10",
                             Identifier = 10,
-                            Level = 2,
                             Name = "Ratones",
                             Parent_Identifier = 9
                         },
@@ -339,7 +328,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "11",
                             Identifier = 11,
-                            Level = 2,
                             Name = "Teclados",
                             Parent_Identifier = 9
                         },
@@ -347,7 +335,6 @@ namespace Shop.Data.Migrations
                         {
                             Id = "12",
                             Identifier = 12,
-                            Level = 0,
                             Name = "Televisores",
                             Parent_Identifier = 0
                         });

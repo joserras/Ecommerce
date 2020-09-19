@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, FormArray } from '@angular/forms';
-import { AdminServiceService } from '../../services/admin-service.service';
+import { AdminService } from '../../services/admin-service.service';
 import { error } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
 declare var jquery: any;
@@ -19,7 +19,7 @@ export class ProductFormComponent implements OnInit {
     price: new FormControl(0),
     Image: this.formBuilder.array([]),
   });
-  constructor(private formBuilder: FormBuilder, private adminService: AdminServiceService, private toastr: ToastrService) {
+  constructor(private formBuilder: FormBuilder, private adminService: AdminService, private toastr: ToastrService) {
     //Allows bootstrap carousels to display 3 items per page rather than just one
     $('.carousel.carousel-multi .item').each(function () {
       var next = $(this).next();

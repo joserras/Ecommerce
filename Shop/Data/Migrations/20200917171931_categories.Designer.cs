@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Data;
 
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200917171931_categories")]
+    partial class categories
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,13 +237,9 @@ namespace Shop.Data.Migrations
             modelBuilder.Entity("Shop.Models.Categories", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Identifier")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -253,104 +251,6 @@ namespace Shop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            Identifier = 1,
-                            Level = 0,
-                            Name = "Ordenadores",
-                            Parent_Identifier = 0
-                        },
-                        new
-                        {
-                            Id = "2",
-                            Identifier = 2,
-                            Level = 1,
-                            Name = "Sobremesa",
-                            Parent_Identifier = 1
-                        },
-                        new
-                        {
-                            Id = "3",
-                            Identifier = 3,
-                            Level = 2,
-                            Name = "Gaming",
-                            Parent_Identifier = 2
-                        },
-                        new
-                        {
-                            Id = "4",
-                            Identifier = 4,
-                            Level = 2,
-                            Name = "Oficina",
-                            Parent_Identifier = 2
-                        },
-                        new
-                        {
-                            Id = "5",
-                            Identifier = 5,
-                            Level = 1,
-                            Name = "Portatiles",
-                            Parent_Identifier = 1
-                        },
-                        new
-                        {
-                            Id = "6",
-                            Identifier = 6,
-                            Level = 2,
-                            Name = "Gaming",
-                            Parent_Identifier = 5
-                        },
-                        new
-                        {
-                            Id = "7",
-                            Identifier = 7,
-                            Level = 2,
-                            Name = "Oficina",
-                            Parent_Identifier = 5
-                        },
-                        new
-                        {
-                            Id = "8",
-                            Identifier = 8,
-                            Level = 2,
-                            Name = "UltraBook",
-                            Parent_Identifier = 5
-                        },
-                        new
-                        {
-                            Id = "9",
-                            Identifier = 9,
-                            Level = 1,
-                            Name = "Periféricos",
-                            Parent_Identifier = 0
-                        },
-                        new
-                        {
-                            Id = "10",
-                            Identifier = 10,
-                            Level = 2,
-                            Name = "Ratones",
-                            Parent_Identifier = 9
-                        },
-                        new
-                        {
-                            Id = "11",
-                            Identifier = 11,
-                            Level = 2,
-                            Name = "Teclados",
-                            Parent_Identifier = 9
-                        },
-                        new
-                        {
-                            Id = "12",
-                            Identifier = 12,
-                            Level = 0,
-                            Name = "Televisores",
-                            Parent_Identifier = 0
-                        });
                 });
 
             modelBuilder.Entity("Shop.Models.Image", b =>

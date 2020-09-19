@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Shop.Models
 {
-    public class Product
+    public class Categories
     {
-        public ProductProfile ProductProfile{get;set;}
-        public User User { get; set; }
-        public Categories Categories { get; set; }
-        public int Tracking { get; set; }
         [Key]
         public string Id { get; set; }
+        public string Name { get; set; }
+        public int Identifier { get; set; }
+        public int Parent_Identifier { get; set; }
+        public int Level { get; set; }
+
 
     }
 }
