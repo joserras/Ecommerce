@@ -114,7 +114,7 @@ namespace Shop.Controllers
         public async Task<string> Register([FromBody] RegisterForm user)
         {
             //los usuarios se loguean con el username por eso utilizo el email
-            var user2 = new User { UserName = user.Email, Email = user.Email,FullName = user.FullName };
+            var user2 = new User { UserName = user.Email, Email = user.Email,FullName = user.FullName,EmailConfirmed=true };
             var result = await _userManager.CreateAsync(user2, user.Password);
             if (result.Succeeded)
             {

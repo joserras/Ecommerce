@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, TemplateRef, ViewContainerRef } from '@angular/core';
 import { AdminService } from '../services/admin-service.service';
 declare var jquery: any;
 declare var $: any;
@@ -9,8 +9,14 @@ declare var $: any;
 })
 export class NavMenuComponent {
   isExpanded = false;
+  //@ViewChild('viewContainer') viewContainer: ViewContainerRef;
+  //@ViewChild('screamOfWar') screamOfWar: TemplateRef<any>;
   constructor(private adminService: AdminService) {
     
+  }
+  ngAfterViewInit() {
+    //let view = this.screamOfWar.createEmbeddedView(null);
+    //this.viewContainer.insert(view);
   }
   ngOnInit(): void {
     $(document).ready(function() {
@@ -20,80 +26,78 @@ export class NavMenuComponent {
           e.preventDefault();
         });
     });
-    this.adminService.getCategories().subscribe(
-      response => {
-        console.log(response);
-        var a = response;
-        for (var i = 0; i < response.length; i++) {
-          if (response[i].submenu) {
-            let a = document.createElement("a");
-            a.href = "#";
-            a.innerHTML = response[i].name;
-            let li = document.createElement("li");
-            li.className = "dropdown-submenu";
-            let ul = document.createElement("ul");
-            ul.className = "dropdown-menu " + response[i].identifier;
-            li.appendChild(a);
-            li.appendChild(ul);
-            //buscamos los anteriores del array puesto que uno de ellas sera la sublista
-            for (let j = 0; j < i; j++) {
-              if (response[j].identifier == response[i].parent_Identifier) {
-                let li = document.createElement("li");
-                a.href = "#";
-                a.innerHTML = response[i].name;
-                let ul = <HTMLElement><unknown>document.getElementsByClassName("dropdown-menu " + response[j].identifier);
-                li.appendChild(a);
-                ul.appendChild(li);
-              }
-            }
-          }
-          if (!response[i].submenu) {
-            let a = document.createElement("a");
-            a.href = "#";
-            let li = document.createElement("li");
-            li.className = "dropdown-submenu";           
-            li.appendChild(a);
+    let button = document.createElement("button");
+    button.className = "btn btn-primary asdasd";
+    button.innerHTML = "Primary";
+    let ul = <HTMLElement><unknown>document.getElementById("ejemplos");
+    ul.appendChild(button);
+    //this.adminService.getCategories().subscribe(
+    //  response => {
+    //    console.log(response);
+       
+      //  for (var i = 0; i < response.length; i++) {
+      //    if (response[i].subMenu) {
+      //      let span = document.createElement("span");
+      //      span.className = "caret";
+      //      let a = document.createElement("a");
+      //      a.href = "#";
+      //      a.innerHTML = response[i].name;
+      //      a.tabIndex = -1;
+      //      a.appendChild(span);
+      //      let li = document.createElement("li");
+      //      li.className = "dropdown-submenu";
+      //      let ul = document.createElement("ul");
+      //      ul.className = "dropdown-menu " + response[i].identifier;
+      //        li.appendChild(a);
+      //        li.appendChild(ul);
+      //      if (response[i].level == 0) {
+      //        let ul = <HTMLElement><unknown>document.getElementById("ul 0");
+      //        ul.appendChild(li);
+      //      }
+      //      //buscamos los anteriores del array puesto que uno de ellas sera la sublista
+      //      for (let j = 0; j < i; j++) {
+      //        if (response[j].identifier == response[i].parent_Identifier) {
+      //          //let li = document.createElement("li");
+      //          //a.href = "#";
+      //          //a.innerHTML = response[i].name;
+      //          console.log(response[i].name);
+      //          let ul = <HTMLElement><unknown>document.getElementsByClassName("dropdown-menu " + response[j].identifier);
+      //          //li.appendChild(a);
+      //          ul[0].appendChild(li);
+      //        }
+      //      }
+      //    }
+      //    if (!response[i].subMenu) {
+      //      let a = document.createElement("a");
+      //      a.href = "#";
+      //      a.innerHTML = response[i].name;
+      //      let li = document.createElement("li");
+                   
+      //      li.appendChild(a);
+      //      if (response[i].level == 0) {
+      //        let ul = <HTMLElement><unknown>document.getElementById("ul 0");
+      //        ul.appendChild(li);
+      //      }
+      //      for (let j = 0; j < i; j++) {
+      //        if (response[j].identifier == response[i].parent_Identifier) {
+      //          //let li = document.createElement("li");
+      //          //a.href = "#";
+      //          //a.innerHTML = response[i].name;
+      //          console.log(response[i].name);
+      //          let ul = <HTMLElement><unknown>document.getElementsByClassName("dropdown-menu " + response[j].identifier);
+      //          //li.appendChild(a);
+      //          ul[0].appendChild(li);
+      //        }
+      //      }
             
-          }
+      //    }
 
-        }
-        //creamos las ul
-        //var level = response[response.length - 1].level;
-        //for (let lvl = 1; lvl <= response.level; lvl++) {
-        //  let ul = document.createElement("ul");
-        //  ul.className = "dropdown-menu";
-        //  ul.id = "ul " + lvl.toString();
-        //  let aux = document.getElementById("ul 0");
-        //  aux.appendChild(ul);
-        //}
+      //  }
+        
 
-        ////creamos las li
-        //for (let lvl = 0; lvl < response.length; lvl++) {
-        //  let a = document.createElement("a");
-        //  a.href = "#";
-        //  let li = document.createElement("li");         
-        //  ul.className = "dropdown-menu";
-        //  ul.id = "ul " + lvl.toString();
-        //  let aux = document.getElementById("ul 0");
-        //  aux.appendChild(ul);
-        //}
-
-        //for (let i = 0; response.length; i++)
-        //{
-
-        //  const p = document.createElement("li");
-        //  for (let x = 0; response.length; x++) {
-        //    if (response[i].identifier == response[x].parent_Identifier)
-        //    {
-
-        //    }
-        //  }
-
-        //} 
-
-      },
-      error => { console.log("error al obtener categorías"); }
-      )   
+      //},
+      //error => { console.log("error al obtener categorías"); }
+      //)   
     
   }
   

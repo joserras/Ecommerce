@@ -55,7 +55,8 @@ namespace Shop.Data
                 Id = "1",
                 Identifier = 1,
                 Name = "Ordenadores",
-                Level = 0
+                Level = 0,
+                SubMenu = true
 
             }) ;
                 modelBuilder.Entity<Categories>().HasData(
@@ -65,7 +66,8 @@ namespace Shop.Data
                    Identifier = 2,
                    Name = "Sobremesa",
                    Parent_Identifier = 1,
-                   Level = 1
+                   Level = 1,
+                   SubMenu = true
                });
                     modelBuilder.Entity<Categories>().HasData(
                    new Categories
@@ -92,7 +94,8 @@ namespace Shop.Data
                   Identifier = 5,
                   Name = "Portatiles",
                   Parent_Identifier = 1,
-                  Level = 1
+                  Level = 1,
+                  SubMenu = true
 
               });
                     modelBuilder.Entity<Categories>().HasData(
@@ -131,7 +134,8 @@ namespace Shop.Data
                Id = "9",
                Identifier = 9,
                Name = "Periféricos",
-               Level = 1
+               Level = 0,
+               SubMenu = true
 
            });
                 modelBuilder.Entity<Categories>().HasData(
@@ -141,7 +145,7 @@ namespace Shop.Data
                    Identifier = 10,
                    Name = "Ratones",
                    Parent_Identifier =9,
-                   Level = 2
+                   Level = 1
 
                });
                 modelBuilder.Entity<Categories>().HasData(
@@ -151,7 +155,7 @@ namespace Shop.Data
                   Identifier = 11,
                   Name = "Teclados",
                   Parent_Identifier = 9,
-                  Level = 2
+                  Level = 1
 
               });
             modelBuilder.Entity<Categories>().HasData(

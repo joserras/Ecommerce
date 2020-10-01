@@ -17,6 +17,7 @@ export class ProductFormComponent implements OnInit {
     amount: new FormControl(0),
     description: new FormControl(''),
     price: new FormControl(0),
+    dateRegister: new FormControl(0),
     Image: this.formBuilder.array([]),
   });
   constructor(private formBuilder: FormBuilder, private adminService: AdminService, private toastr: ToastrService) {

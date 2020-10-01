@@ -51,7 +51,15 @@ namespace Shop
             //Assign Admin role to the main User here we have given our newly registered 
             //login id for Admin management
             User user = await UserManager.FindByEmailAsync("1@hotmail");
-           
+            if (user == null)
+            {
+                user = new User();
+                user.Email = "1@hotmail";
+                user.EmailConfirmed = true;
+                user.UserName = "1@hotmail";
+                user.FullName = "Admin 1";
+                await UserManager.CreateAsync(user,"@Lorkino95");
+            }
             await UserManager.AddToRoleAsync(user, "Admin");
         }
         public static IEnumerable<ApiResource> GetApis()
@@ -189,7 +197,7 @@ new Claim(ClaimTypes.Name, user.UserName),
                     pattern: "api/{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-           // CreateUserRoles(svProvider).Wait();
+            CreateUserRoles(svProvider).Wait();
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,

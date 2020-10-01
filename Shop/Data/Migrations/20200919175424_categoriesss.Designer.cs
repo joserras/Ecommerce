@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Data;
 
 namespace Shop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200919175424_categoriesss")]
+    partial class categoriesss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -334,7 +336,7 @@ namespace Shop.Data.Migrations
                         {
                             Id = "9",
                             Identifier = 9,
-                            Level = 0,
+                            Level = 1,
                             Name = "Periféricos",
                             Parent_Identifier = 0,
                             SubMenu = true
@@ -343,7 +345,7 @@ namespace Shop.Data.Migrations
                         {
                             Id = "10",
                             Identifier = 10,
-                            Level = 1,
+                            Level = 2,
                             Name = "Ratones",
                             Parent_Identifier = 9,
                             SubMenu = false
@@ -352,7 +354,7 @@ namespace Shop.Data.Migrations
                         {
                             Id = "11",
                             Identifier = 11,
-                            Level = 1,
+                            Level = 2,
                             Name = "Teclados",
                             Parent_Identifier = 9,
                             SubMenu = false
@@ -453,9 +455,6 @@ namespace Shop.Data.Migrations
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DateRegister")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()

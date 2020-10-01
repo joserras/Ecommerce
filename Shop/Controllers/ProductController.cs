@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Shop.Data;
 using Shop.Models;
 
@@ -43,5 +44,19 @@ namespace Shop.Controllers
             return Ok();
 
         }
+
+        [HttpGet]
+        public ActionResult<User> GetLastProducts()
+        {
+
+            //// This doesn't count login failures towards account lockout
+            //// To enable password failures to trigger account lockout, set lockoutOnFailure: true
+
+            List<ProductProfile> LastProducts = _context.ProductsProfile.OrderBy(a => a.DateRegister).Include(a=>a.Image).Include(a=>a.Opinions).Take(15).ToList();
+            return Ok(LastProducts);
+
+        }
+
+
     }
 }

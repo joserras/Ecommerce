@@ -14,6 +14,8 @@ namespace Shop.Models
         public int Identifier { get; set; }
         public int Parent_Identifier { get; set; }
         public int Level { get; set; }
+        public bool SubMenu { get; set; }
+
 
 
     }

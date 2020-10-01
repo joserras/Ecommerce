@@ -23,6 +23,8 @@ namespace Shop.Models
 
         public List<Image> Image { get; set; }
         [Key]
-        public string Id { get; set; } 
+        public string Id { get; set; }
+
+        public DateTime DateRegister { get; set; } = DateTime.Now;
     }
 }
