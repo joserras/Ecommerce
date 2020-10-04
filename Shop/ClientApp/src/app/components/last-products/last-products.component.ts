@@ -15,11 +15,11 @@ export class LastProductsComponent implements OnInit {
   {
     
     this.adminService.getLastProducts().subscribe(response => {
-      console.log(response);
+      
       for (let i = 0; i < 12;i++) {
         this.slides[i] = response[i];
       }
-      console.log(this.slides);
+     
     },
       error => { console.log(error); }
       
