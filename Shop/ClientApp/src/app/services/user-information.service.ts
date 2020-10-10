@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/user.model'
 import { error } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
+import { ProductProfile } from '../models/productProfile.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +35,10 @@ export class UserInformationService {
         console.log(err);
         this.toastr.error('ERROR!', err);
       };
+  }
+  searchProduct(value:any): Observable<ProductProfile[]> {
+    return this.http.post<any>("api/product/GetProducts",
+      {Value:value});
   }
   register(user: any): void {
 

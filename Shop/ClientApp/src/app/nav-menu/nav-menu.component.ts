@@ -13,7 +13,13 @@ export class NavMenuComponent {
   //@ViewChild('screamOfWar') screamOfWar: TemplateRef<any>;
   constructor(private adminService: AdminService) {
     
-  } 
+  }
+  onKey(event: KeyboardEvent) { // with type info
+    let value = (event.target as HTMLInputElement).value;
+    if (value.length >= 3) {
+
+    }
+  }
   ngAfterViewInit() {
     //let view = this.screamOfWar.createEmbeddedView(null);
     //this.viewContainer.insert(view);
