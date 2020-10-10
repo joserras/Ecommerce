@@ -3,7 +3,7 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-.dropdown-submenu {
+/*.dropdown-submenu {
   position: relative;
 }
 
@@ -11,7 +11,7 @@ a.navbar-brand {
     top: 0;
     left: 100%;
     margin-top: -1px;
-  }
+  }*/
 html {
   font-size: 14px;
 }
@@ -24,3 +24,41 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+
+
+  .dropdown-menu .dropdown-toggle:after {
+    border-top: .3em solid transparent;
+    border-right: 0;
+    border-bottom: .3em solid transparent;
+    border-left: .3em solid;
+  }
+
+  .dropdown-menu .dropdown-menu {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .dropdown-menu li {
+    position: relative;
+  }
+
+  .nav-item .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+  }
+
+  .nav-item .submenu-left {
+    right: 100%;
+    left: auto;
+  }
+
+  .dropdown-menu > li:hover {
+    background-color: #f1f1f1
+  }
+
+    .dropdown-menu > li:hover > .submenu {
+      display: block;
+    }
+
