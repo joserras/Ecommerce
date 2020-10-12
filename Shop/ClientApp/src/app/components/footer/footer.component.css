@@ -3,88 +3,87 @@
 
 
 
-  section .section-title {
+section .section-title {
     text-align: center;
     color: black;
     margin-bottom: 50px;
     text-transform: uppercase;
-  }
+}
 
 #footer {
-    padding-top:60px;
-  background: white !important;
-  color: black;
-  box-shadow: 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    padding-top: 60px;
+    background: white !important;
+    color: black;
+    box-shadow: 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
 
-  #footer h5 {
-    padding-left: 10px;
-    
-    color: black;
-  }
-
-  #footer a {
-    color: black;
-    text-decoration: none !important;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-  }
-
-  #footer ul.social li {
-    padding: 3px 0;
-  }
-
-    #footer ul.social li a i {
-      margin-right: 5px;
-      font-size: 25px;
-      -webkit-transition: .5s all ease;
-      -moz-transition: .5s all ease;
-      transition: .5s all ease;
-    }
-
-    #footer ul.social li:hover a i {
-      font-size: 30px;
-      margin-top: -10px;
-    }
-
-    #footer ul.social li a,
-    #footer ul.quick-links li a {
-      color: black;
-    }
-
-      #footer ul.social li a:hover {
+    #footer h5 {
+        padding-left: 10px;
         color: black;
-      }
-
-  #footer ul.quick-links li {
-    padding: 3px 0;
-    -webkit-transition: .5s all ease;
-    -moz-transition: .5s all ease;
-    transition: .5s all ease;
-  }
-
-    #footer ul.quick-links li:hover {
-      padding: 3px 0;
-      margin-left: 5px;
-      font-weight: 700;
     }
 
-    #footer ul.quick-links li a i {
-     
+    #footer a {
+        color: black;
+        text-decoration: none !important;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
     }
 
-    #footer ul.quick-links li:hover a i {
-      font-weight: 700;
+    #footer ul.social li {
+        padding: 3px 0;
     }
+
+        #footer ul.social li a i {
+            margin-right: 5px;
+            font-size: 25px;
+            -webkit-transition: .5s all ease;
+            -moz-transition: .5s all ease;
+            transition: .5s all ease;
+        }
+
+        #footer ul.social li:hover a i {
+            font-size: 30px;
+            margin-top: -10px;
+        }
+
+        #footer ul.social li a,
+        #footer ul.quick-links li a {
+            color: black;
+        }
+
+            #footer ul.social li a:hover {
+                color: black;
+            }
+
+    #footer ul.quick-links li {
+        padding: 3px 0;
+        -webkit-transition: .5s all ease;
+        -moz-transition: .5s all ease;
+        transition: .5s all ease;
+    }
+
+        #footer ul.quick-links li:hover {
+            padding: 3px 0;
+            margin-left: 5px;
+            font-weight: 700;
+        }
+
+        #footer ul.quick-links li a i {
+        }
+
+        #footer ul.quick-links li:hover a i {
+            font-weight: 700;
+        }
 
 .text-white {
-  color: black !important;
+    color: black !important;
 }
+
 @media (max-width:767px) {
-  #footer h5 {
-    padding-left: 0;
-    border-left: transparent;
-    padding-bottom: 0px;
-    margin-bottom: 10px;
-  }
+    #footer h5 {
+        padding-left: 0;
+        border-left: transparent;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+    }
 }

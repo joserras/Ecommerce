@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container" id="ejemplos">
       <!--<<div>
-    <ng-container #viewContainer></ng-container>
-  </div>
-  <ng-template #isLoggedInTemplate>
-    <div> You are logged in! </div>
-    <ng-template>-->
+        <ng-container #viewContainer></ng-container>
+      </div>
+      <ng-template #isLoggedInTemplate>
+        <div> You are logged in! </div>
+        <ng-template>-->
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav">
         <span class="navbar-toggler-icon"></span>
@@ -17,45 +17,45 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  <i class="fas fa-bars"></i>  </a>
             <!--<ul  id="dropdown-menu first" class="dropdown-menu show"><li><a href="#" class="dropdown-item">Televisores</a></li><li><a href="#" class="dropdown-item">Ordenadores »</a><ul class="submenu dropdown-menu 1"><li><a href="#" class="dropdown-item">Sobremesa »</a><ul class="submenu dropdown-menu 2"><li><a href="#" class="dropdown-item">Gaming</a></li><li><a href="#" class="dropdown-item">Oficina</a></li></ul></li><li><a href="#" class="dropdown-item">Portatiles »</a><ul class="submenu dropdown-menu 5"><li><a href="#" class="dropdown-item">Gaming</a></li><li><a href="#" class="dropdown-item">Oficina</a></li><li><a href="#" class="dropdown-item">UltraBook</a></li></ul></li></ul></li><li><a href="#" class="dropdown-item">Periféricos »</a><ul class="submenu dropdown-menu 9"><li><a href="#" class="dropdown-item">Ratones</a></li><li><a href="#" class="dropdown-item">Teclados</a></li></ul></li></ul>-->
-            <ul class="dropdown-menu" id="dropdown-menu first">       
+            <ul class="dropdown-menu" id="dropdown-menu first">
             </ul>
           </li>
-              
-            </ul>
-         
-        
+
+        </ul>
+
+
         <a [routerLink]="['/']">
           <img class="navbar-brand" class="img-fluid" width="138px" height="48px" src="https://cdn.pccomponentes.com/img/logos/logo-pccomponentes.svg">
         </a>
       </div>
-      </div>
-      <div class="container">
-        <button class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-                aria-label="Toggle navigation"
-                [attr.aria-expanded]="isExpanded"
-                (click)="toggle()">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
-             [ngClass]="{ show: isExpanded }">
-          <app-login-menu></app-login-menu>
-          <ul class="navbar-nav flex-grow">
+    </div>
+    <div class="container">
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+           [ngClass]="{ show: isExpanded }">
+        <app-login-menu></app-login-menu>
+        <ul class="navbar-nav flex-grow">
 
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['link-active']">
-              <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" (keyup)="onKey($event)" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" (keyup)="onKey($event)" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-</nav>
+    </div>
+  </nav>
 </header>

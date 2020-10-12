@@ -10,7 +10,7 @@ namespace Shop.Models
     {
         [Required]
         public string Description { get; set; }
-        public int Score{ get; set; }
+        public int Score { get; set; }
         public string Verified { get; set; }
         public bool Administred { get; set; }
         [Key]

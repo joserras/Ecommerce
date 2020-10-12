@@ -6,7 +6,7 @@ namespace Shop.Models
     public class Image
     {
 
-     
+
         [System.ComponentModel.DataAnnotations.Key]
         public string Id { get; set; }
         [JsonConverter(typeof(Film.TypeOf.Base64FileJsonConverter))]

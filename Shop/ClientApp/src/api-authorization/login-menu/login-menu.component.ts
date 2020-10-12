@@ -5,18 +5,18 @@ import { map, tap } from 'rxjs/operators';
 import { UserInformationService } from '../../app/services/user-information.service';
 
 @Component({
-  selector: 'app-login-menu',
-  templateUrl: './login-menu.component.html',
-  styleUrls: ['./login-menu.component.css']
+    selector: 'app-login-menu',
+    templateUrl: './login-menu.component.html',
+    styleUrls: ['./login-menu.component.css']
 })
 export class LoginMenuComponent implements OnInit {
-  public isAuthenticated: boolean;
-  public userName: string;
+    public isAuthenticated: boolean;
+    public userName: string;
 
-  constructor(private authorizeService: UserInformationService) { }
+    constructor(private authorizeService: UserInformationService) { }
 
-  ngOnInit() {
-    this.isAuthenticated = this.authorizeService.isAuthenticated;
-   // this.userName = this.authorizeService.getUser().pipe(map(u => u && u.name));
-  }
+    ngOnInit() {
+        this.isAuthenticated = this.authorizeService.isAuthenticated;
+        // this.userName = this.authorizeService.getUser().pipe(map(u => u && u.name));
+    }
 }

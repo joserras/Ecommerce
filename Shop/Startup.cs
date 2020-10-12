@@ -58,7 +58,7 @@ namespace Shop
                 user.EmailConfirmed = true;
                 user.UserName = "1@hotmail";
                 user.FullName = "Admin 1";
-                await UserManager.CreateAsync(user,"@Lorkino95");
+                await UserManager.CreateAsync(user, "@Lorkino95");
             }
             await UserManager.AddToRoleAsync(user, "Admin");
         }
@@ -111,14 +111,14 @@ new Claim(ClaimTypes.Name, user.UserName),
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-           services.AddMvc().AddNewtonsoftJson(o => 
-    {
-    o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-    });
+            services.AddMvc().AddNewtonsoftJson(o =>
+     {
+         o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+     });
             services.Configure<IdentityOptions>(options =>
             {
                 // Default Lockout settings.
@@ -153,7 +153,7 @@ new Claim(ClaimTypes.Name, user.UserName),
             //    options.User.RequireUniqueEmail = true;
             //});
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           
+
             services.AddControllersWithViews();
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory

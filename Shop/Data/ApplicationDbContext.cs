@@ -27,7 +27,7 @@ namespace Shop.Data
 
         }
 
-           
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -43,7 +43,7 @@ namespace Shop.Data
             modelBuilder.Entity<Opinion>()
               .Property(b => b.Id)
               .ValueGeneratedOnAdd();
-           
+
             modelBuilder.Entity<Categories>(u =>
             {
                 u.HasKey(b => b.Id);
@@ -58,76 +58,76 @@ namespace Shop.Data
                 Level = 0,
                 SubMenu = true
 
-            }) ;
-                modelBuilder.Entity<Categories>().HasData(
-               new Categories
-               {
-                   Id = "2",
-                   Identifier = 2,
-                   Name = "Sobremesa",
-                   Parent_Identifier = 1,
-                   Level = 1,
-                   SubMenu = true
-               });
-                    modelBuilder.Entity<Categories>().HasData(
-                   new Categories
-                   {
-                       Id = "3",
-                       Identifier = 3,
-                       Name = "Gaming",
-                       Parent_Identifier = 2,
-                       Level = 2
-                   });
-                    modelBuilder.Entity<Categories>().HasData(
-                   new Categories
-                   {
-                       Id = "4",
-                       Identifier = 4,
-                       Name = "Oficina",
-                       Parent_Identifier = 2,
-                       Level = 2
-                   });  
-                modelBuilder.Entity<Categories>().HasData(
-              new Categories
-              {
-                  Id = "5",
-                  Identifier = 5,
-                  Name = "Portatiles",
-                  Parent_Identifier = 1,
-                  Level = 1,
-                  SubMenu = true
+            });
+            modelBuilder.Entity<Categories>().HasData(
+           new Categories
+           {
+               Id = "2",
+               Identifier = 2,
+               Name = "Sobremesa",
+               Parent_Identifier = 1,
+               Level = 1,
+               SubMenu = true
+           });
+            modelBuilder.Entity<Categories>().HasData(
+           new Categories
+           {
+               Id = "3",
+               Identifier = 3,
+               Name = "Gaming",
+               Parent_Identifier = 2,
+               Level = 2
+           });
+            modelBuilder.Entity<Categories>().HasData(
+           new Categories
+           {
+               Id = "4",
+               Identifier = 4,
+               Name = "Oficina",
+               Parent_Identifier = 2,
+               Level = 2
+           });
+            modelBuilder.Entity<Categories>().HasData(
+          new Categories
+          {
+              Id = "5",
+              Identifier = 5,
+              Name = "Portatiles",
+              Parent_Identifier = 1,
+              Level = 1,
+              SubMenu = true
 
-              });
-                    modelBuilder.Entity<Categories>().HasData(
-                  new Categories
-                  {
-                      Id = "6",
-                      Identifier = 6,
-                      Name = "Gaming",
-                      Parent_Identifier = 5,
-                      Level = 2
+          });
+            modelBuilder.Entity<Categories>().HasData(
+          new Categories
+          {
+              Id = "6",
+              Identifier = 6,
+              Name = "Gaming",
+              Parent_Identifier = 5,
+              Level = 2
 
-                  });
-                    modelBuilder.Entity<Categories>().HasData(
-                  new Categories
-                  {
-                      Id = "7",
-                      Identifier = 7,
-                      Name = "Oficina",
-                      Parent_Identifier = 5,
-                      Level = 2
+          });
+            modelBuilder.Entity<Categories>().HasData(
+          new Categories
+          {
+              Id = "7",
+              Identifier = 7,
+              Name = "Oficina",
+              Parent_Identifier = 5,
+              Level = 2
 
-                  });
-                    modelBuilder.Entity<Categories>().HasData(
-                  new Categories
-                  {
-                      Id = "8",
-                      Identifier = 8,
-                      Name = "UltraBook",
-                      Parent_Identifier = 5,
-                      Level = 2
+          });
+            modelBuilder.Entity<Categories>().HasData(
+          new Categories
+          {
+              Id = "8",
+              Identifier = 8,
+              Name = "UltraBook",
+              Parent_Identifier = 5,
+              Level = 2
 
-                  });
+          });
             modelBuilder.Entity<Categories>().HasData(
            new Categories
            {
@@ -138,26 +138,26 @@ namespace Shop.Data
                SubMenu = true
 
            });
-                modelBuilder.Entity<Categories>().HasData(
-               new Categories
-               {
-                   Id = "10",
-                   Identifier = 10,
-                   Name = "Ratones",
-                   Parent_Identifier =9,
-                   Level = 1
+            modelBuilder.Entity<Categories>().HasData(
+           new Categories
+           {
+               Id = "10",
+               Identifier = 10,
+               Name = "Ratones",
+               Parent_Identifier = 9,
+               Level = 1
 
-               });
-                modelBuilder.Entity<Categories>().HasData(
-              new Categories
-              {
-                  Id = "11",
-                  Identifier = 11,
-                  Name = "Teclados",
-                  Parent_Identifier = 9,
-                  Level = 1
+           });
+            modelBuilder.Entity<Categories>().HasData(
+          new Categories
+          {
+              Id = "11",
+              Identifier = 11,
+              Name = "Teclados",
+              Parent_Identifier = 9,
+              Level = 1
 
-              });
+          });
             modelBuilder.Entity<Categories>().HasData(
            new Categories
            {

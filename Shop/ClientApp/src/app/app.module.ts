@@ -24,6 +24,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,15 +40,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductFormComponent,
     LastProductsComponent,
     ProductCardComponent,
-    FooterComponent
-   
-    
+    FooterComponent,
+    InfiniteScrollComponent
+
+
 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    InfiniteScrollModule,
     FontAwesomeModule,
     ApiAuthorizationModule,
     ReactiveFormsModule,
@@ -60,7 +64,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       { path: 'login', component: LoginFormComponent },
       { path: 'register', component: RegisterFormComponent },
       { path: 'new-product', component: ProductFormComponent, canActivate: [AuthorizeGuard], data: { roles: ['Admin'] } }
-      
+
     ])
   ],
   providers: [

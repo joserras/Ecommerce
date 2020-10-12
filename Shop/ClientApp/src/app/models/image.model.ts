@@ -1,4 +1,4 @@
 export class Image {
-  content: string[] = [];
-  id: string;
+    content: string[] = [];
+    id: string;
 }

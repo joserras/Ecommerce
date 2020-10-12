@@ -5,9 +5,9 @@
                     (breakpoint)="breakpoint($event)"
                     (afterChange)="afterChange($event)"
                     (beforeChange)="beforeChange($event)">
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <!--<img src="{{ slide.img }}" alt="" width="100%">-->
-    <app-product-card [product] ="slide"></app-product-card>
-  </div>
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <!--<img src="{{ slide.img }}" alt="" width="100%">-->
+        <app-product-card [product]="slide"></app-product-card>
+    </div>
 </ngx-slick-carousel>
 

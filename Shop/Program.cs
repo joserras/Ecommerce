@@ -24,6 +24,6 @@ namespace Shop
                     webBuilder.UseStartup<Startup>();
                 });
 
-        
+
     }
 }

@@ -5,21 +5,21 @@ import { Router } from '@angular/router';
 import { ProductProfile } from '../models/productProfile.model';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AdminService {
- 
-  setProduct(productForm: any):Observable<any> {   
-    return this.http.post<any>("api/product/NewProductProfile", productForm);
-  }
 
-  getCategories(): Observable<any> {
-    return this.http.get<ProductProfile>("api/categories/GetCategories");
-  }
+    setProduct(productForm: any): Observable<any> {
+        return this.http.post<any>("api/product/NewProductProfile", productForm);
+    }
 
-  getLastProducts(): Observable<any> {
-    return this.http.get<any>("api/product/GetLastProducts");
-  }
+    getCategories(): Observable<any> {
+        return this.http.get<ProductProfile>("api/categories/GetCategories");
+    }
 
-  constructor(private http: HttpClient, private router: Router) { }
+    getLastProducts(): Observable<any> {
+        return this.http.get<any>("api/product/GetLastProducts");
+    }
+
+    constructor(private http: HttpClient, private router: Router) { }
 }

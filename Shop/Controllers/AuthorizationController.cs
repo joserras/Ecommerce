@@ -75,7 +75,7 @@ namespace Shop.Controllers
             _httpContextAccessor = httpContextAccessor;
         }
         [HttpPost]
-        public async  Task<ActionResult<User>> Login([FromBody] user user)
+        public async Task<ActionResult<User>> Login([FromBody] user user)
         {
 
             //// This doesn't count login failures towards account lockout
@@ -93,7 +93,7 @@ namespace Shop.Controllers
                 user c = (user)a;
                 var rol = await _userManager.GetRolesAsync(a);
                 c.Rol = rol.First();
-                return  Ok(c);
+                return Ok(c);
             }
 
             //if (result.RequiresTwoFactor)
@@ -114,7 +114,7 @@ namespace Shop.Controllers
         public async Task<string> Register([FromBody] RegisterForm user)
         {
             //los usuarios se loguean con el username por eso utilizo el email
-            var user2 = new User { UserName = user.Email, Email = user.Email,FullName = user.FullName,EmailConfirmed=true };
+            var user2 = new User { UserName = user.Email, Email = user.Email, FullName = user.FullName, EmailConfirmed = true };
             var result = await _userManager.CreateAsync(user2, user.Password);
             if (result.Succeeded)
             {
